@@ -6,11 +6,12 @@ import PropTypes from 'prop-types'
 
 const getSaludo = () => 'Oyiaaa'
 
-export const FirstApp = ({ title, subtitle, nombre }) => {
+export const FirstApp = ({ title, subtitle = 'No hay subtitulo', nombre= 'esno' }) => {
 
   return (
     <>  {/* //Mismo comportamiento que un Fragment. Permite devolver más de un objeto raíz */}
-        <h2>{ title }</h2>
+        <h1 data-testid="test-title">{ title }</h1>
+        <p>{ subtitle }</p>
         <p>{ subtitle }</p>
         <p>{ nombre }</p>
     </>
@@ -20,11 +21,11 @@ export const FirstApp = ({ title, subtitle, nombre }) => {
 
 FirstApp.propTypes = {
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.number.isRequired,
+    // subtitle: PropTypes.number.isRequired,
 }
 
-FirstApp.defaultProps = {
-    nombre: 'esno',
-    subtitle: 'No hay subtítulo',
-    title: 'No hay título',
-}
+// FirstApp.defaultProps = {
+//     nombre: 'esno',
+//     subtitle: 'No hay subtítulo',
+//     // title: 'No hay título',
+// }
